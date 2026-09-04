@@ -263,15 +263,15 @@ h3 { font-size: clamp(1.875rem, 2.6vw, 2.625rem); line-height: 1.04; letter-spac
 .final-caption > span { font-size: var(--text-micro); text-transform: uppercase; letter-spacing: .14em; }
 .final-caption > p { max-width: 620px; margin: 5px 0 0; font-size: var(--text-small); }
 
-.site-footer { padding: 5rem max(var(--gutter), calc((100vw - 82.5rem) / 2)) 2rem; background: var(--ink); color: var(--chalk); }
+.site-footer { padding: 3.5rem max(var(--gutter), calc((100vw - 82.5rem) / 2)) 1.5rem; background: var(--ink); color: var(--chalk); }
 .brand-reverse img { filter: none; }
-.footer-top { display: flex; align-items: end; justify-content: space-between; gap: 40px; padding-bottom: 55px; border-bottom: 1px solid var(--line-light); }
+.footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: clamp(24px, 4vw, 56px); padding-bottom: 32px; border-bottom: 1px solid var(--line-light); }
 .footer-top p { max-width: 500px; margin: 0; color: rgba(255,253,248,.65); font-size: .95rem; }
-.footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; padding: 55px 0; }
+.footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 48px); padding: 32px 0; }
 .footer-links div { display: grid; align-content: start; gap: 10px; }
 .footer-links span { margin-bottom: 8px; color: rgba(255,253,248,.52); font-size: var(--text-micro); text-transform: uppercase; letter-spacing: .14em; }
 .footer-links a, .footer-links button { min-height: 44px; display: inline-flex; align-items: center; justify-self: start; padding: .45rem 0; border: 0; background: transparent; color: white; font-size: 14px; cursor: pointer; }
-.footer-bottom { margin: 0; padding-top: 25px; display: flex; justify-content: space-between; border-top: 1px solid var(--line-light); color: rgba(255,253,248,.68); font-size: var(--text-micro); text-transform: uppercase; letter-spacing: .08em; }
+.footer-bottom { margin: 0; padding-top: 20px; display: flex; justify-content: space-between; border-top: 1px solid var(--line-light); color: rgba(255,253,248,.68); font-size: var(--text-micro); text-transform: uppercase; letter-spacing: .06em; }
 
 dialog { padding: 0; border: 0; background: transparent; color: inherit; }
 dialog::backdrop { background: rgba(10,15,13,.72); backdrop-filter: blur(7px); }

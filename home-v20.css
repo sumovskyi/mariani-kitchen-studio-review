@@ -157,13 +157,6 @@
 .field-hint{display:block;margin-top:.35rem;color:var(--ink-soft);font-size:.86rem}
 
 @media(min-width:901px){
-  .inspiration-story .chapter-shell{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto;grid-auto-rows:clamp(15rem,20vw,21rem);grid-auto-flow:dense;gap:.6rem}
-  .inspiration-story .story-head{grid-column:1/span 5;grid-row:1;align-self:start;margin:0;padding-right:1rem}
-  .inspiration-story .story-head h2{font-size:clamp(2.75rem,4vw,3.75rem)}
-  .inspiration-story .story-head>p:not(.eyebrow){font-size:1.07rem;line-height:1.65}
-  .inspiration-story .early-trust{grid-column:1/span 5;grid-row:2;align-self:end;margin:1.25rem 0 1.5rem;padding:1.2rem 0}
-  .inspiration-story .inspiration-runway{display:contents}
-  .inspiration-story .inspiration-runway>.image-button:first-child{grid-column:7/-1;grid-row:1/span 2;min-height:36rem}
   .technology-card.tech-wide:last-child{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);grid-template-rows:clamp(26rem,34vw,32rem)}
   .technology-card.tech-wide:last-child figcaption{align-self:center;padding:clamp(1.5rem,3vw,3rem)}
   .technology-card.tech-wide:last-child img{object-position:48% 64%}
@@ -229,4 +222,159 @@
 @media(prefers-reduced-motion:reduce){
   .hero-frame{transition:none;transform:none}
   .inspiration-runway,.technology-grid,.production-strip,.library-grid{scroll-behavior:auto}
+}
+
+/* V20.8 — the room and the words share the opening view at every width. */
+.chapter{padding-top:clamp(4.5rem,6.5vw,6.5rem);padding-bottom:clamp(4.5rem,6.5vw,6.5rem)}
+.inspiration-heading .eyebrow,.technology-heading .eyebrow,.scene-heading .eyebrow{margin-bottom:1.1rem}
+.inspiration-heading h2,.technology-heading h2,.scene-heading h2{margin:0 0 1.25rem;max-width:19ch;font-size:clamp(2.75rem,4.55vw,4.65rem);line-height:1.04;text-wrap:pretty}
+.inspiration-copy p,.technology-copy p,.scene-body p{max-width:42rem;margin:0 0 1.25rem;color:var(--ink-soft);font-size:clamp(1.02rem,1.22vw,1.13rem);line-height:1.65}
+.inspiration-copy .text-link,.scene-body .text-link{margin-top:.25rem}
+.inspiration-story .story-head{margin:0;padding:0;max-width:none}
+.inspiration-copy{max-width:37rem}
+.technology-heading h2{max-width:19ch}
+.technology-intro{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);grid-template-areas:"heading film" "copy film";gap:0 clamp(2rem,4vw,4rem);margin-bottom:clamp(2rem,4vw,3.5rem);align-items:center}
+.technology-heading{grid-area:heading;align-self:end}
+.technology-copy{grid-area:copy;align-self:start;max-width:37rem}
+.technology-copy p{color:rgba(255,253,248,.84)}
+.technology-copy .section-actions{margin-top:.75rem;gap:.25rem 1.5rem}
+.technology-intro>.technology-film{grid-area:film;align-self:stretch;min-height:29rem;height:100%;aspect-ratio:auto;margin:0}
+.technology-intro>.technology-film video{object-position:54% center}
+.scope-scene{grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);gap:clamp(2rem,4.5vw,5rem)}
+.scope-copy .scene-heading h2,.value-copy .scene-heading h2{max-width:16ch}
+.scope-room{height:clamp(29rem,43vw,40rem)}
+.scope-room img{object-position:54% center}
+.scope-copy .scene-body .button{margin-top:.5rem}
+.value-layout{grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);gap:clamp(2rem,4.5vw,5rem)}
+.value-copy{grid-column:auto;padding-top:0}
+.value-room{grid-column:auto;aspect-ratio:5/4}
+.value-copy .scene-body p{color:var(--ink)}
+.company-layout{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.yan-image{height:auto;aspect-ratio:4/5;max-height:39rem}
+.company-copy h2{max-width:18ch;font-size:clamp(2.75rem,4.25vw,4.5rem)}
+.company-copy>p:not(.eyebrow){max-width:38rem}
+.company-copy>.company-record-label{margin:1.3rem 0 0;font-size:.83rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.company-record{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin:.75rem 0 1.25rem;padding:1.4rem 0 0;border-top:1px solid var(--line)}
+.company-record>*{display:grid;align-content:start;gap:.6rem;min-width:0}
+.company-record strong{font-family:var(--serif);font-size:clamp(2.7rem,3.9vw,4rem);font-weight:400;line-height:1;letter-spacing:-.025em;color:var(--oxblood)}
+.company-record span{max-width:22ch;color:var(--ink-soft);font-size:.91rem;line-height:1.5}
+.company-reviews{margin-top:clamp(2.5rem,4vw,4rem);padding-top:2rem;border-top:1px solid var(--line)}
+.reviews-heading{display:flex;align-items:baseline;justify-content:space-between;gap:1rem 2rem;margin-bottom:1.5rem}
+.reviews-heading h3{max-width:26ch;margin:0;font-size:clamp(1.9rem,2.8vw,2.7rem);line-height:1.1}
+.reviews-heading a{flex:0 0 auto;min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:.25em;font-size:.9rem}
+.review-cards{display:grid;grid-template-columns:minmax(12rem,.55fr) minmax(0,1.45fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.review-rating{display:grid;align-content:start;justify-items:start;gap:.3rem}
+.review-rating strong{font-family:var(--serif);font-size:clamp(3rem,5vw,4.5rem);font-weight:400;line-height:1;color:var(--green-deep)}
+.review-rating>span{font-size:1rem;font-weight:600}
+.review-rating strong span{margin-left:.2rem;font-family:var(--sans);font-size:1rem;font-weight:400;letter-spacing:0;color:var(--ink-soft)}
+.review-rating>p{margin:0;color:var(--ink-soft);font-size:.9rem;line-height:1.5}
+.review-rating small{color:var(--ink-soft);font-size:.86rem;line-height:1.5}
+.review-rating a{min-height:44px;display:inline-flex;align-items:center;margin-top:.3rem;font-size:.85rem;text-decoration:underline;text-underline-offset:.25em}
+.company-reviews .review-card{max-width:none;margin:0;padding:0 0 0 1.5rem;border-left:2px solid var(--oxblood);text-align:left}
+.company-reviews .review-card blockquote{max-width:33ch;margin:0 0 1rem;font-size:clamp(1.75rem,2.7vw,2.65rem);line-height:1.22}
+.company-reviews .review-card figcaption{color:var(--ink-soft);font-size:.9rem;line-height:1.6;letter-spacing:0;text-transform:none}
+.workmanship-proof{margin-top:clamp(2.5rem,4vw,4rem)}
+.workmanship-proof>h3{max-width:30ch;margin:0 0 1.5rem;font-size:clamp(1.9rem,2.8vw,2.7rem);line-height:1.1}
+.workmanship-proof .production-strip{margin-top:0}
+.production-strip figure{height:clamp(23rem,30vw,30rem)}
+.inquiry-stage{grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);gap:clamp(2rem,4.5vw,4rem)}
+.inquiry-copy h2{max-width:16ch;font-size:clamp(2.75rem,4.65vw,4.8rem)}
+.inquiry-photo{height:clamp(28rem,42vw,39rem)}
+.site-footer .footer-top{align-items:flex-start}
+.site-footer .footer-top>div:first-child{max-width:28rem}
+.footer-links{gap:clamp(1.5rem,4vw,3rem)}
+.footer-links nav{align-content:start;gap:.15rem}
+
+@media(min-width:761px){
+  .inspiration-story .chapter-shell{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto;grid-auto-rows:clamp(15rem,20vw,21rem);grid-auto-flow:dense;gap:.6rem}
+  .inspiration-story .story-head{display:block;grid-column:1/span 5;grid-row:1;align-self:center;padding:1rem 0 1.5rem}
+  .inspiration-heading h2{font-size:clamp(2.55rem,4.2vw,4.3rem)}
+  .inspiration-story .inspiration-runway{display:contents}
+  .inspiration-story .inspiration-runway>.image-button:first-child{grid-column:7/-1;grid-row:1;min-height:clamp(28rem,42vw,37rem)}
+}
+
+@media(min-width:761px) and (max-width:1000px){
+  .chapter{padding-top:4rem;padding-bottom:4rem}
+  .inspiration-story .inspiration-runway>.image-button:not(:first-child){grid-column:span 6;grid-row:auto}
+  .inspiration-story .story-head{grid-column:1/span 6;padding-right:1.5rem}
+  .inspiration-heading h2{font-size:clamp(2.45rem,4.6vw,2.9rem)}
+  .inspiration-copy p{font-size:1rem}
+  .scope-scene,.value-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:1.75rem}
+  .scope-copy .scene-heading h2,.value-copy .scene-heading h2{font-size:clamp(2.45rem,4.7vw,3rem)}
+  .scope-room{height:30rem;aspect-ratio:auto}
+  .value-layout{display:grid}.value-room{height:27rem;aspect-ratio:auto}
+  .company-layout{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:2rem}
+  .company-copy h2{font-size:clamp(2.35rem,4.4vw,2.8rem)}
+  .company-record strong{font-size:3rem}
+  .inquiry-stage{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:1.75rem}
+  .inquiry-copy h2{font-size:clamp(2.45rem,4.5vw,3rem)}
+  .inquiry-photo{height:29rem}
+}
+
+@media(max-width:900px){
+  .technology-intro{grid-template-columns:1fr;grid-template-areas:"heading" "film" "copy";gap:0;margin-bottom:2rem}
+  .technology-heading h2{max-width:21ch;font-size:clamp(2.5rem,5.5vw,3.4rem)}
+  .technology-intro>.technology-film{width:100%;min-height:0;height:auto;aspect-ratio:16/9;margin:.25rem 0 1.5rem}
+  .technology-copy{max-width:44rem}
+  .technology-copy .section-actions{margin-top:.25rem}
+  .reviews-heading{align-items:start;flex-direction:column;gap:.4rem}
+  .review-cards{grid-template-columns:minmax(10rem,.6fr) minmax(0,1.4fr);gap:2rem}
+}
+
+@media(max-width:760px){
+  .chapter{padding:3.5rem 1.25rem}
+  .inspiration-heading h2,.technology-heading h2,.scene-heading h2{font-size:clamp(2.35rem,10.2vw,3rem);line-height:1.05;margin-bottom:1.15rem}
+  .inspiration-copy p,.technology-copy p,.scene-body p{font-size:1rem;line-height:1.65}
+  .inspiration-story .chapter-shell{display:flex;flex-direction:column}
+  .inspiration-story .story-head{display:contents}
+  .inspiration-heading{order:0}
+  .inspiration-story .inspiration-runway{order:1;margin-top:.2rem}
+  .inspiration-copy{order:2;margin-top:1.35rem}
+  .inspiration-runway .image-button,.inspiration-runway .runway-large,.inspiration-runway .runway-wide{height:clamp(22rem,50svh,28rem);min-height:0}
+  .technology-intro{margin-bottom:1.8rem}
+  .technology-intro>.technology-film{width:calc(100% + 40px);height:auto;aspect-ratio:16/10;margin:.15rem -20px 1.4rem}
+  .technology-copy .section-actions{display:flex;align-items:start;gap:.3rem 1.3rem}
+  .technology-card,.technology-card.tech-wide{grid-template-rows:min(48svh,27rem) auto}
+  .scope-scene,.value-layout{display:grid;grid-template-columns:1fr;gap:0}
+  .scope-copy,.value-copy{display:contents}
+  .scope-scene .scene-heading,.value-layout .scene-heading{grid-row:1}
+  .scope-room,.value-room{grid-row:2;grid-column:1;width:calc(100% + 40px);height:auto;aspect-ratio:4/3;margin:.25rem -20px 1.5rem}
+  .scope-room img{object-position:54% center}
+  .scope-scene .scene-body,.value-layout .scene-body{grid-row:3}
+  .scope-copy .scene-heading h2,.value-copy .scene-heading h2{font-size:clamp(2.35rem,10.2vw,3rem);max-width:18ch}
+  .scene-body .button{margin-top:.25rem}
+  .company-layout{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .company-copy{display:contents}
+  .company-copy>.eyebrow,.company-copy>h2{order:0}
+  .company-copy>.eyebrow{margin-bottom:1.1rem}
+  .company-copy>h2{font-size:clamp(2.35rem,10.2vw,3rem);margin-bottom:1.6rem;max-width:18ch}
+  .company-person{order:1;margin-bottom:1.5rem}
+  .yan-image{height:auto;aspect-ratio:4/5}
+  .company-copy>p:not(.eyebrow){order:2;font-size:1rem;margin-bottom:0}
+  .company-copy>.company-record-label{order:3;margin:1.3rem 0 0;font-size:.83rem}
+  .company-record{order:3;margin:.7rem 0 .8rem;padding-top:1.2rem;gap:1.25rem}
+  .company-record strong{font-size:3rem}.company-record span{font-size:.87rem}
+  .company-copy>.text-link,.company-copy>.section-actions{order:4;align-self:flex-start;margin-top:0}
+  .company-reviews{margin-top:2.5rem;padding-top:1.6rem}
+  .reviews-heading{margin-bottom:1.4rem}.reviews-heading h3{font-size:2rem}
+  .review-cards{grid-template-columns:1fr;gap:1.35rem}
+  .review-rating{grid-template-columns:auto 1fr;column-gap:1rem;align-items:center}
+  .review-rating strong{grid-column:1;grid-row:1/span 2;font-size:3.4rem}
+  .review-rating>.review-platform{grid-column:2;grid-row:1}
+  .review-rating>p{grid-column:2;grid-row:2}
+  .review-rating>a{grid-column:1/-1;grid-row:3}
+  .company-reviews .review-card{padding-left:1rem}
+  .company-reviews .review-card blockquote{font-size:1.9rem;line-height:1.22}
+  .company-reviews .review-card figcaption{font-size:.87rem}
+  .workmanship-proof{margin-top:2.5rem}.workmanship-proof>h3{font-size:2rem;margin-bottom:1.25rem}
+  .production-strip figure{height:46svh;min-height:22rem}
+  .inquiry-stage{grid-template-columns:1fr;gap:1.8rem}
+  .inquiry-copy h2{font-size:clamp(2.35rem,10.2vw,3rem);line-height:1.05;max-width:18ch;margin-bottom:1rem}
+  .inquiry-copy p:not(.eyebrow){font-size:1rem;line-height:1.65}
+  .inquiry-copy .button{margin-top:.5rem}
+  .inquiry-photo{height:auto;aspect-ratio:3/2}
+  .site-footer{padding-top:2.75rem;padding-bottom:1.5rem}
+  .site-footer .footer-top{gap:2rem;padding-bottom:1.6rem}
+  .footer-links{gap:1.5rem 1.25rem}
+  .footer-links nav{gap:.05rem}
 }
