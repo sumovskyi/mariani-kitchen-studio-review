@@ -258,20 +258,20 @@
 .company-record>*{display:grid;align-content:start;gap:.6rem;min-width:0}
 .company-record strong{font-family:var(--serif);font-size:clamp(2.7rem,3.9vw,4rem);font-weight:400;line-height:1;letter-spacing:-.025em;color:var(--oxblood)}
 .company-record span{max-width:22ch;color:var(--ink-soft);font-size:.91rem;line-height:1.5}
-.company-reviews{margin-top:clamp(2.5rem,4vw,4rem);padding-top:2rem;border-top:1px solid var(--line)}
-.reviews-heading{display:flex;align-items:baseline;justify-content:space-between;gap:1rem 2rem;margin-bottom:1.5rem}
-.reviews-heading h3{max-width:26ch;margin:0;font-size:clamp(1.9rem,2.8vw,2.7rem);line-height:1.1}
-.reviews-heading a{flex:0 0 auto;min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:.25em;font-size:.9rem}
-.review-cards{display:grid;grid-template-columns:minmax(12rem,.55fr) minmax(0,1.45fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.company-reviews{margin-top:clamp(1.5rem,2.5vw,2.25rem);padding-top:0;border-top:0}
+.reviews-heading{margin-bottom:1.15rem}
+.reviews-heading h3{max-width:none;margin:0;font-size:clamp(1.65rem,2.4vw,2.15rem);line-height:1.15}
+
+.review-cards{display:grid;grid-template-columns:minmax(10rem,.32fr) minmax(0,1fr);gap:clamp(1.5rem,3vw,3rem);align-items:start}
 .review-rating{display:grid;align-content:start;justify-items:start;gap:.3rem}
-.review-rating strong{font-family:var(--serif);font-size:clamp(3rem,5vw,4.5rem);font-weight:400;line-height:1;color:var(--green-deep)}
+.review-rating strong{font-family:var(--serif);font-size:clamp(2.8rem,4vw,3.75rem);font-weight:400;line-height:1;color:var(--green-deep)}
 .review-rating>span{font-size:1rem;font-weight:600}
 .review-rating strong span{margin-left:.2rem;font-family:var(--sans);font-size:1rem;font-weight:400;letter-spacing:0;color:var(--ink-soft)}
 .review-rating>p{margin:0;color:var(--ink-soft);font-size:.9rem;line-height:1.5}
 .review-rating small{color:var(--ink-soft);font-size:.86rem;line-height:1.5}
-.review-rating a{min-height:44px;display:inline-flex;align-items:center;margin-top:.3rem;font-size:.85rem;text-decoration:underline;text-underline-offset:.25em}
-.company-reviews .review-card{max-width:none;margin:0;padding:0 0 0 1.5rem;border-left:2px solid var(--oxblood);text-align:left}
-.company-reviews .review-card blockquote{max-width:33ch;margin:0 0 1rem;font-size:clamp(1.75rem,2.7vw,2.65rem);line-height:1.22}
+.review-rating a{min-height:44px;display:inline-flex;align-items:center;margin-top:.25rem;font-size:.875rem;text-decoration:none}
+.company-reviews .review-card{max-width:none;margin:0;padding:0;border:0;text-align:left}
+.company-reviews .review-card blockquote{max-width:40ch;margin:0 0 .75rem;font-size:clamp(1.5rem,2.15vw,2.15rem);line-height:1.25}
 .company-reviews .review-card figcaption{color:var(--ink-soft);font-size:.9rem;line-height:1.6;letter-spacing:0;text-transform:none}
 .workmanship-proof{margin-top:clamp(2.5rem,4vw,4rem)}
 .workmanship-proof>h3{max-width:30ch;margin:0 0 1.5rem;font-size:clamp(1.9rem,2.8vw,2.7rem);line-height:1.1}
@@ -317,8 +317,7 @@
   .technology-intro>.technology-film{width:100%;min-height:0;height:auto;aspect-ratio:16/9;margin:.25rem 0 1.5rem}
   .technology-copy{max-width:44rem}
   .technology-copy .section-actions{margin-top:.25rem}
-  .reviews-heading{align-items:start;flex-direction:column;gap:.4rem}
-  .review-cards{grid-template-columns:minmax(10rem,.6fr) minmax(0,1.4fr);gap:2rem}
+  .review-cards{grid-template-columns:11rem minmax(0,1fr);gap:1.5rem}
 }
 
 @media(max-width:760px){
@@ -355,17 +354,10 @@
   .company-record{order:3;margin:.7rem 0 .8rem;padding-top:1.2rem;gap:1.25rem}
   .company-record strong{font-size:3rem}.company-record span{font-size:.87rem}
   .company-copy>.text-link,.company-copy>.section-actions{order:4;align-self:flex-start;margin-top:0}
-  .company-reviews{margin-top:2.5rem;padding-top:1.6rem}
-  .reviews-heading{margin-bottom:1.4rem}.reviews-heading h3{font-size:2rem}
-  .review-cards{grid-template-columns:1fr;gap:1.35rem}
-  .review-rating{grid-template-columns:auto 1fr;column-gap:1rem;align-items:center}
-  .review-rating strong{grid-column:1;grid-row:1/span 2;font-size:3.4rem}
-  .review-rating>.review-platform{grid-column:2;grid-row:1}
-  .review-rating>p{grid-column:2;grid-row:2}
-  .review-rating>a{grid-column:1/-1;grid-row:3}
-  .company-reviews .review-card{padding-left:1rem}
-  .company-reviews .review-card blockquote{font-size:1.9rem;line-height:1.22}
-  .company-reviews .review-card figcaption{font-size:.87rem}
+  .company-reviews{margin-top:1.5rem;padding-top:0}
+  .reviews-heading{margin-bottom:1rem}
+  .reviews-heading h3{font-size:1.75rem}
+  .company-reviews .review-card figcaption{font-size:.875rem}
   .workmanship-proof{margin-top:2.5rem}.workmanship-proof>h3{font-size:2rem;margin-bottom:1.25rem}
   .production-strip figure{height:46svh;min-height:22rem}
   .inquiry-stage{grid-template-columns:1fr;gap:1.8rem}
@@ -377,4 +369,14 @@
   .site-footer .footer-top{gap:2rem;padding-bottom:1.6rem}
   .footer-links{gap:1.5rem 1.25rem}
   .footer-links nav{gap:.05rem}
+}
+
+/* V20.8.1: compact reviews; each link keeps only its existing single rule. */
+@media(max-width:560px){
+  .review-cards{grid-template-columns:1fr;gap:1rem}
+  .review-rating{grid-template-columns:auto 1fr;column-gap:1rem;align-items:center}
+  .review-rating strong{grid-column:1;grid-row:1/span 2;font-size:3rem}
+  .review-rating>.review-platform{grid-column:2;grid-row:1}
+  .review-rating>p{grid-column:2;grid-row:2}
+  .review-rating>a{grid-column:1/-1;grid-row:3}
 }
