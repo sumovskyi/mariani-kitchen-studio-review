@@ -18,8 +18,10 @@ h3 { font-size: clamp(1.875rem, 2.6vw, 2.625rem); line-height: 1.04; letter-spac
 .skip-link { position: absolute; z-index: 1000; top: 10px; left: 10px; padding: 12px 18px; background: var(--ink); color: white; transform: translateY(-160%); }
 .skip-link:focus { transform: translateY(0); }
 
-.site-header { position: absolute; z-index: 50; inset: 0 0 auto; height: 88px; background: transparent; color: var(--chalk); border-bottom: 1px solid rgba(255,253,248,.28); }
-.header-shell { width: var(--shell); height: 100%; margin: 0 auto; display: flex; align-items: center; gap: var(--grid-gap); }
+.site-header { position: fixed; z-index: 50; inset: 0 0 auto; height: 88px; background: transparent; color: var(--chalk); border-bottom: 1px solid rgba(255,253,248,.28); transition: background-color .2s ease, border-color .2s ease; }
+body:not(.route-page).header-scrolled .site-header, body:not(.route-page).nav-open .site-header, .no-js body:not(.route-page) .site-header { background: var(--green-deep); border-bottom-color: var(--line-light); }
+.header-shell { width: min(calc(100% - (2 * var(--gutter))), 90rem); height: 100%; margin: 0 auto; display: flex; align-items: center; gap: var(--grid-gap); }
+html { scroll-padding-top: 104px; }
 .brand { min-height: 44px; display: inline-flex; align-items: center; gap: 11px; flex: 0 0 auto; }
 .brand::before { width: 27px; height: 27px; flex: 0 0 auto; background: url("assets/brand/mariani-open-join-reverse.svg") center / contain no-repeat; content: ""; transform: translateY(-1px); }
 .site-header .brand::before { filter: drop-shadow(0 1px 1px rgba(10,17,14,.32)); }
@@ -401,8 +403,9 @@ input:focus, textarea:focus, select:focus { border-bottom-color: var(--oxblood);
   h1 { font-size: clamp(2.75rem, 11.5vw, 3.125rem); }
   h2 { font-size: clamp(2.25rem, 9.8vw, 2.7rem); }
   h3 { font-size: clamp(1.75rem, 8vw, 2.125rem); }
-  .site-header { height: 74px; position: absolute; }
-  .header-shell { width: var(--shell); }
+  .site-header { height: 74px; }
+  .header-shell { width: calc(100% - 40px); }
+  html { scroll-padding-top: 90px; }
   .brand { gap: 9px; }
   .brand::before { width: 24px; height: 24px; }
   .brand-type > span { font-size: 21px; }
@@ -517,7 +520,7 @@ input:focus, textarea:focus, select:focus { border-bottom-color: var(--oxblood);
 
 /* Shared foundation for the 17 supporting routes carried into V19. */
 .route-page { background: var(--porcelain); }
-.route-page .site-header { position: relative; height: auto; background: var(--ivory); color: var(--ink); border-bottom-color: var(--line); }
+.route-page .site-header { position: sticky; height: auto; background: var(--ivory); color: var(--ink); border-bottom-color: var(--line); }
 .route-page .brand::before { background-image: url("assets/brand/mariani-open-join.svg"); filter: none; }
 .route-page .site-header .header-action { background: var(--green); border-color: var(--green); color: var(--chalk); }
 .route-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: min(100%, calc(var(--content) + (var(--gutter) * 2))); min-height: 5.4rem; margin: 0 auto; padding: 0 var(--gutter); }

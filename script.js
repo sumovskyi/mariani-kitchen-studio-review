@@ -5,6 +5,45 @@
   const track = (event, details = {}) => dataLayer.push({ event, mariani_version: 'v20', ...details });
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  let headerFrame = 0;
+  const updateHeader = () => {
+    document.body.classList.toggle('header-scrolled', window.scrollY > 24);
+    headerFrame = 0;
+  };
+  window.addEventListener('scroll', () => {
+    if (!headerFrame) headerFrame = requestAnimationFrame(updateHeader);
+  }, { passive: true });
+  window.addEventListener('pageshow', updateHeader);
+  updateHeader();
+
+  const reviewTrack = document.querySelector('[data-review-track]');
+  if (reviewTrack) {
+    const cards = Array.from(reviewTrack.children);
+    const controls = document.querySelector('[data-review-controls]');
+    const previous = document.querySelector('[data-review-prev]');
+    const next = document.querySelector('[data-review-next]');
+    const position = document.querySelector('[data-review-position]');
+    const syncReviews = () => {
+      const end = reviewTrack.scrollWidth - reviewTrack.clientWidth;
+      const step = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : reviewTrack.clientWidth;
+      const current = Math.min(cards.length, Math.round(reviewTrack.scrollLeft / step) + 1);
+      controls.hidden = end < 2;
+      previous.disabled = reviewTrack.scrollLeft < 2;
+      next.disabled = reviewTrack.scrollLeft >= end - 2;
+      position.textContent = `${current} / ${cards.length}`;
+    };
+    const moveReviews = (direction) => {
+      const step = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : reviewTrack.clientWidth;
+      reviewTrack.scrollBy({ left: direction * step, behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+    previous.addEventListener('click', () => moveReviews(-1));
+    next.addEventListener('click', () => moveReviews(1));
+    reviewTrack.addEventListener('scroll', syncReviews, { passive: true });
+    if ('ResizeObserver' in window) new ResizeObserver(syncReviews).observe(reviewTrack);
+    else window.addEventListener('resize', syncReviews);
+    syncReviews();
+  }
+
   document.querySelectorAll('[data-gallery-item]').forEach((button) => {
     if (!button.hasAttribute('aria-label')) button.setAttribute('aria-label', `Open ${button.dataset.title || 'kitchen image'}`);
   });

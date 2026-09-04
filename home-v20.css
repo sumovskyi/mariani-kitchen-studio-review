@@ -380,3 +380,95 @@
   .review-rating>p{grid-column:2;grid-row:2}
   .review-rating>a{grid-column:1/-1;grid-row:3}
 }
+
+/* V20.9 — one room argument, literal materials, and compact company proof. */
+.room-investment{background:var(--paper)}
+.room-composition{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);gap:0 clamp(2rem,5vw,5rem);align-items:center}
+.room-heading{grid-column:2;grid-row:1;align-self:end}
+.room-heading h2{max-width:17ch;margin:0 0 1.4rem;font-size:clamp(2.6rem,4.4vw,4.5rem);line-height:1.06;letter-spacing:-.035em;text-wrap:pretty}
+.room-main{grid-column:1;grid-row:1/span 2;margin:0;min-width:0;height:clamp(32rem,44vw,42rem)}
+.room-main .image-button{width:100%;height:100%}
+.room-main img{object-position:50% center}
+.room-judgement{grid-column:2;grid-row:2;align-self:start}
+.room-judgement>p{max-width:38rem;margin:0;color:var(--ink-soft);font-size:1.06rem;line-height:1.7}
+.room-actions{display:flex;flex-wrap:wrap;align-items:start;gap:.75rem 1.5rem;margin-top:1.6rem}
+.room-actions .text-link{font-size:.92rem}
+.technology-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem 1rem;align-items:start}
+.technology-grid .technology-card,.technology-grid .technology-card.tech-wide{grid-column:auto;grid-template-columns:minmax(0,1fr);grid-template-rows:clamp(17rem,24vw,23rem) auto;align-self:start}
+.technology-grid .technology-card figcaption{min-height:0;padding:1.25rem .35rem .5rem;background:none}
+.technology-grid .technology-card figcaption strong{font-size:clamp(1.45rem,2vw,1.9rem);line-height:1.18;max-width:24ch}
+.technology-grid .technology-card figcaption span{max-width:34ch;font-size:.96rem;line-height:1.6;color:rgba(255,253,248,.84)}
+.technology-grid .material-finishes .image-button img{position:absolute;width:260%;max-width:none;height:auto;left:0;top:50%;transform:translateY(-56%);object-fit:contain}
+.technology-grid .material-surfaces .image-button img{object-position:52% 65%;transform:scale(1.17)}
+.technology-grid .material-handles .image-button img{position:absolute;width:245%;max-width:none;height:auto;left:-2%;top:50%;transform:translateY(-54%);object-fit:contain}
+.company-proof{margin-top:2rem}
+.company-proof>.company-record-label{margin:0 0 .9rem;color:var(--ink-soft);font-size:.82rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.company-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;padding:1.3rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.company-metrics>div{display:flex;flex-direction:column;gap:.5rem;min-width:0}
+.company-metrics strong{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,4.4vw,4rem);line-height:1;color:var(--green-deep);letter-spacing:-.03em}
+.company-metrics strong span{font-size:.5em;letter-spacing:0}
+.company-metrics>div>span{font-size:.9rem;line-height:1.4;color:var(--ink-soft)}
+.company-reviews{margin-top:2rem}
+.reviews-heading{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.1rem}
+.review-controls{display:flex;align-items:center;gap:.5rem}
+.review-controls[hidden]{display:none}
+.review-controls>span{margin-right:.5rem;color:var(--ink-soft);font-size:.85rem;font-variant-numeric:tabular-nums}
+.review-controls button{width:44px;height:44px;padding:0;display:grid;place-items:center;border:1px solid var(--green-deep);background:transparent;color:var(--green-deep);font-size:1.3rem;cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease)}
+.review-controls button:hover:not(:disabled){background:var(--green-deep);color:var(--chalk)}
+.review-controls button:disabled{opacity:.3;cursor:default}
+.review-carousel{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 2rem)/3);gap:1rem;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--stone) transparent;padding-bottom:.5rem}
+.company-reviews .review-card{display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;padding:1.5rem;min-height:14rem;background:var(--paper);scroll-snap-align:start;margin:0;border:0}
+.company-reviews .review-card blockquote{font-size:clamp(1.4rem,2.05vw,1.85rem);line-height:1.25;margin:0;max-width:30ch}
+.company-reviews .review-card figcaption{display:flex;flex-direction:column;gap:.2rem;font-size:.875rem;line-height:1.5}
+.company-reviews .review-card figcaption strong{font-family:var(--sans);font-weight:600;color:var(--ink);font-size:inherit}
+.workmanship-intro{display:flex;flex-wrap:wrap;align-items:baseline;gap:1rem 3rem;margin-bottom:1.5rem}
+.workmanship-intro h3{flex:1 1 22rem;max-width:22ch;margin:0;font-size:clamp(2rem,3.3vw,3.3rem);line-height:1.1}
+.workmanship-intro p{flex:1 1 25rem;max-width:39rem;margin:0;color:var(--ink-soft);font-size:1.02rem;line-height:1.65}
+.library-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}
+.library-actions .button{min-height:56px;min-width:12.5rem;justify-content:space-between;font-size:.95rem;padding:1rem 1.4rem}
+.library-actions .button-outline{background:transparent;color:var(--green-deep);border-color:var(--green-deep)}
+.library-actions .button-outline:hover{background:var(--green-deep);color:var(--chalk)}
+@media(min-width:761px) and (max-width:1000px){
+  .technology-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .technology-grid .technology-card,.technology-grid .technology-card.tech-wide{grid-template-rows:21rem auto}
+  .room-composition{gap:0 1.75rem}
+  .room-heading h2{font-size:2.8rem}
+  .room-main{height:35rem}
+  .review-carousel{grid-auto-columns:calc((100% - 1rem)/2)}
+}
+@media(max-width:760px){
+  .room-investment{padding-top:0}
+  .room-composition{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .room-main{order:0;flex:none;width:calc(100% + 40px);height:clamp(17rem,68vw,29rem);aspect-ratio:auto;margin:0 -20px 1.7rem}
+  .room-main .image-button{height:100%}
+  .room-heading{order:1;align-self:stretch;min-width:0;width:100%}
+  .room-heading h2{max-width:20ch;font-size:clamp(2.3rem,7.1vw,3rem);margin-bottom:1rem}
+  .room-judgement{order:2}
+  .room-judgement>p{font-size:1rem;line-height:1.65}
+  .room-actions{margin-top:1.25rem;gap:.6rem 1.2rem}
+  .technology-grid{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:88%;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;align-items:start;padding-bottom:.7rem;scrollbar-width:thin;scrollbar-color:var(--leaf) transparent}
+  .technology-grid .technology-card,.technology-grid .technology-card.tech-wide{grid-column:auto;grid-row:auto;grid-template-rows:clamp(16rem,50vw,23rem) auto;scroll-snap-align:start}
+  .technology-grid .technology-card figcaption{padding:1.1rem 0 .5rem}
+  .technology-grid .technology-card figcaption strong{font-size:1.6rem;max-width:24ch}
+  .technology-grid .technology-card figcaption span{font-size:1rem}
+  .company-copy>.text-link{margin-top:1rem}
+  .company-proof{margin-top:1.7rem}
+  .company-metrics{gap:1rem;padding:1.1rem 0}
+  .company-metrics strong{font-size:2.6rem}
+  .company-metrics>div>span{font-size:.875rem}
+  .company-reviews{margin-top:1.7rem}
+  .reviews-heading h3{font-size:1.8rem}
+  .review-carousel{grid-auto-columns:86%;gap:.75rem}
+  .company-reviews .review-card{padding:1.25rem;min-height:13rem}
+  .company-reviews .review-card blockquote{font-size:1.65rem}
+  .workmanship-intro{gap:.8rem}
+  .workmanship-intro h3{font-size:2rem;max-width:25ch;flex-basis:100%}
+  .workmanship-intro p{font-size:1rem;flex-basis:100%}
+  .library-actions{gap:.75rem;margin-top:1.4rem}
+  .library-actions .button{min-width:0}
+}
+@media(max-width:480px){
+  .company-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem 1rem}
+  .company-metrics strong{font-size:2.8rem}
+  .library-actions .button{width:100%}
+}
