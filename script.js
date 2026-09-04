@@ -212,6 +212,12 @@
   };
   const openInquiry = (trigger, { context = '', reference = null } = {}) => {
     if (!inquiry) return;
+    // Reopening the inquiry is a fresh invitation; do not carry a blur error into it.
+    form?.querySelectorAll('input, textarea').forEach((field) => { field.removeAttribute('aria-invalid'); delete field.dataset.touched; });
+    form?.querySelectorAll('.field-error').forEach((message) => { message.textContent = ''; });
+    const summary = form?.querySelector('.form-errors');
+    if (summary) { summary.textContent = ''; summary.classList.remove('has-errors'); }
+    if (formStatus) { formStatus.textContent = ''; formStatus.classList.remove('is-visible'); }
     inquiryReturnFocus = trigger || document.activeElement;
     currentReference = reference;
     renderReference();
@@ -279,8 +285,8 @@
       const preference = form.elements.contact?.value || 'Email';
       return setError(field, (preference === 'Call' || preference === 'Text') && !value ? `Please enter a phone number for ${preference.toLowerCase()}.` : '');
     }
-    if (field.name === 'change') return setError(field, value ? '' : 'Tell us what you would like the new kitchen to improve.');
-    if (field.name === 'consent') return setError(field, field.checked ? '' : 'Please confirm that Capable Group may contact you.');
+    if (field.name === 'change') return setError(field, value ? '' : 'Please add a short note about your kitchen.');
+    if (field.name === 'consent') return setError(field, field.checked ? '' : 'Please confirm that we may contact you about this kitchen.');
     return true;
   };
   form?.addEventListener('focusin', () => {
@@ -289,13 +295,17 @@
     track('inquiry_start');
   });
   form?.querySelectorAll('input, textarea, select').forEach((field) => {
-    field.addEventListener('blur', () => validate(field));
-    field.addEventListener('input', () => { if (field.getAttribute('aria-invalid') === 'true') validate(field); });
+    field.addEventListener('blur', () => {
+      if (field.dataset.touched === 'true' || field.getAttribute('aria-invalid') === 'true') validate(field);
+    });
+    field.addEventListener('input', () => { field.dataset.touched = 'true'; if (field.getAttribute('aria-invalid') === 'true') validate(field); });
     field.addEventListener('change', () => {
       if (field.name === 'contact') {
         syncContactRequirements();
-        validate(form.elements.email);
-        validate(form.elements.phone);
+        [form.elements.email, form.elements.phone].filter(Boolean).forEach((contactField) => {
+          if (contactField.dataset.touched === 'true') validate(contactField);
+          else setError(contactField, '');
+        });
       }
       if (field.getAttribute('aria-invalid') === 'true') validate(field);
     });
@@ -310,13 +320,14 @@
     const fields = ['name', 'city', 'email', 'phone', 'change', 'consent'].map((name) => form.elements[name]);
     const invalid = fields.filter((field) => field && !validate(field));
     errorsBox?.classList.toggle('has-errors', Boolean(invalid.length));
+    if (errorsBox) errorsBox.textContent = invalid.length ? 'Please check the highlighted fields.' : '';
     if (invalid.length) {
       track('inquiry_validation_error', { fields: invalid.map((field) => field.name).join(',') });
       invalid[0].focus();
       return;
     }
     if (formStatus) {
-      formStatus.textContent = 'Your kitchen note is ready for a Mariani conversation. This private prototype did not send or store your contact information.';
+      formStatus.textContent = 'Your inquiry preview is ready. Nothing has been sent or saved.';
       formStatus.classList.add('is-visible');
       formStatus.focus();
     }
