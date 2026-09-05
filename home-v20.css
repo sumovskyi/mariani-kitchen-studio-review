@@ -128,7 +128,7 @@
 
 /* Deep closing inspiration library; completed cases remain a separate Projects route. */
 .inspiration-library{background:var(--paper)}
-.library-actions{display:flex;flex-wrap:wrap;gap:.75rem 2rem;margin-top:.75rem}
+
 .library-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-flow:dense;grid-auto-rows:clamp(14rem,17vw,18rem);gap:.55rem}
 .library-grid .image-button{grid-column:span 3;min-height:0}
 .library-grid .library-wide{grid-column:span 6}
@@ -213,7 +213,7 @@
   .kitchen-review{margin:2rem 0;padding-left:1rem}.kitchen-review blockquote{font-size:1.8rem}.kitchen-review figcaption{font-size:.88rem}
   .trust-rail{grid-template-columns:1fr}.trust-rail>*{min-height:4.8rem;border-left:0;border-top:1px solid var(--line);justify-content:flex-start;text-align:left}.trust-rail>*:first-child{border-top:0}
   .production-strip{margin:1rem -20px 0;padding:0 20px 1rem;display:flex;gap:.55rem;overflow-x:auto;scroll-snap-type:x mandatory}.production-strip figure{flex:0 0 84vw;height:52svh;min-height:24rem;scroll-snap-align:center}
-  .library-actions{display:grid;justify-items:start;gap:.4rem}.library-grid{margin:0 -20px;padding:0 20px 1rem;display:flex;gap:.55rem;overflow-x:auto;scroll-snap-type:x mandatory}.library-grid .image-button,.library-grid .library-wide,.library-grid .library-tall,.library-grid .library-feature{flex:0 0 86vw;height:66svh;min-height:31rem;scroll-snap-align:center}.library-grid .image-button>span{font-size:.92rem}
+  .library-grid{margin:0 -20px;padding:0 20px 1rem;display:flex;gap:.55rem;overflow-x:auto;scroll-snap-type:x mandatory}.library-grid .image-button,.library-grid .library-wide,.library-grid .library-tall,.library-grid .library-feature{flex:0 0 86vw;height:66svh;min-height:31rem;scroll-snap-align:center}.library-grid .image-button>span{font-size:.92rem}
   .inquiry-copy h2{font-size:clamp(2.8rem,12vw,3.7rem)}.inquiry-photo{height:30rem}
   .footer-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.25rem}.site-footer .footer-top{align-items:start}
   .inspiration-runway,.technology-grid,.production-strip,.library-grid{scrollbar-width:thin;scrollbar-color:var(--stone) transparent;scroll-padding-inline:20px;overscroll-behavior-x:contain}
@@ -392,7 +392,7 @@
 .room-judgement{grid-column:2;grid-row:2;align-self:start}
 .room-judgement>p{max-width:38rem;margin:0;color:var(--ink-soft);font-size:1.06rem;line-height:1.7}
 .room-actions{display:flex;flex-wrap:wrap;align-items:start;gap:.75rem 1.5rem;margin-top:1.6rem}
-.room-actions .text-link{font-size:.92rem}
+
 .technology-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem 1rem;align-items:start}
 .technology-grid .technology-card,.technology-grid .technology-card.tech-wide{grid-column:auto;grid-template-columns:minmax(0,1fr);grid-template-rows:clamp(17rem,24vw,23rem) auto;align-self:start}
 .technology-grid .technology-card figcaption{min-height:0;padding:1.25rem .35rem .5rem;background:none}
@@ -424,10 +424,8 @@
 .workmanship-intro{display:flex;flex-wrap:wrap;align-items:baseline;gap:1rem 3rem;margin-bottom:1.5rem}
 .workmanship-intro h3{flex:1 1 22rem;max-width:22ch;margin:0;font-size:clamp(2rem,3.3vw,3.3rem);line-height:1.1}
 .workmanship-intro p{flex:1 1 25rem;max-width:39rem;margin:0;color:var(--ink-soft);font-size:1.02rem;line-height:1.65}
-.library-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}
-.library-actions .button{min-height:56px;min-width:12.5rem;justify-content:space-between;font-size:.95rem;padding:1rem 1.4rem}
-.library-actions .button-outline{background:transparent;color:var(--green-deep);border-color:var(--green-deep)}
-.library-actions .button-outline:hover{background:var(--green-deep);color:var(--chalk)}
+
+
 @media(min-width:761px) and (max-width:1000px){
   .technology-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .technology-grid .technology-card,.technology-grid .technology-card.tech-wide{grid-template-rows:21rem auto}
@@ -464,11 +462,11 @@
   .workmanship-intro{gap:.8rem}
   .workmanship-intro h3{font-size:2rem;max-width:25ch;flex-basis:100%}
   .workmanship-intro p{font-size:1rem;flex-basis:100%}
-  .library-actions{gap:.75rem;margin-top:1.4rem}
-  .library-actions .button{min-width:0}
+  
+  
 }
 @media(max-width:480px){
   .company-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem 1rem}
   .company-metrics strong{font-size:2.8rem}
-  .library-actions .button{width:100%}
+  
 }

@@ -40,11 +40,11 @@ html { scroll-padding-top: 104px; }
 .nav-panel a:last-child { border-bottom: 0; }
 .nav-panel span { display: block; margin-top: 3px; color: var(--ink-soft); font-size: var(--text-micro); font-weight: 400; }
 .menu-toggle, .primary-nav .nav-mobile-action { display: none; }
-.button, .viewer-reference-action { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 22px; padding: 0 24px; border: 1px solid var(--green); border-radius: 0; background: var(--green); color: var(--chalk); font-family: var(--sans); font-size: 14px; font-weight: 700; letter-spacing: .03em; cursor: pointer; transition: background .25s, color .25s, transform .25s; }
-.button:hover, .button:focus-visible, .viewer-reference-action:hover, .viewer-reference-action:focus-visible { background: var(--green-deep); transform: translateY(-1px); }
+.button, .viewer-reference-action { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 0; padding: 0 24px; border: 1px solid var(--green); border-radius: 0; background: var(--green); color: var(--chalk); font-family: var(--sans); font-size: 14px; font-weight: 700; letter-spacing: .03em; cursor: pointer; transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease); }
+.button:hover, .button:focus-visible, .viewer-reference-action:hover, .viewer-reference-action:focus-visible { background: var(--green-deep); transform: none; }
 .button-small { min-height: 46px; padding: 0 18px; font-size: 13px; }
 .button-outline { background: transparent; color: var(--ink); border-color: var(--ink); }
-.button-outline:hover { color: var(--chalk); }
+.button-outline:hover, .button-outline:focus-visible { color: var(--chalk); }
 .button-dark { background: var(--ink); border-color: var(--ink); }
 .site-header .header-action { background: var(--chalk); border-color: var(--chalk); color: var(--green-deep); }
 .site-header .header-action:hover, .site-header .header-action:focus-visible { background: transparent; color: var(--chalk); }
@@ -677,3 +677,6 @@ input:focus, textarea:focus, select:focus { border-bottom-color: var(--oxblood);
 @media(prefers-reduced-motion:reduce){
   .collection-filters,.technology-hub-grid{scroll-behavior:auto}
 }
+
+/* V20.9.1: restrained directional controls; labels carry all call-to-action buttons. */
+.direction-chevron { display: block; flex: none; pointer-events: none; }
