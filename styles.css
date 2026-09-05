@@ -42,6 +42,8 @@ html { scroll-padding-top: 104px; }
 .menu-toggle, .primary-nav .nav-mobile-action { display: none; }
 .button, .viewer-reference-action { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 0; padding: 0 24px; border: 1px solid var(--green); border-radius: 0; background: var(--green); color: var(--chalk); font-family: var(--sans); font-size: 14px; font-weight: 700; letter-spacing: .03em; cursor: pointer; transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease); }
 .button:hover, .button:focus-visible, .viewer-reference-action:hover, .viewer-reference-action:focus-visible { background: var(--green-deep); transform: none; }
+.button-with-cue { gap: 10px; padding-inline: 20px; }
+.action-cue { display: block; width: 14px; height: 14px; flex: none; pointer-events: none; }
 .button-small { min-height: 46px; padding: 0 18px; font-size: 13px; }
 .button-outline { background: transparent; color: var(--ink); border-color: var(--ink); }
 .button-outline:hover, .button-outline:focus-visible { color: var(--chalk); }
